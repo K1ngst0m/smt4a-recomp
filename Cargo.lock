@@ -3087,7 +3087,7 @@ dependencies = [
 [[package]]
 name = "recomp-abi"
 version = "0.1.0"
-source = "git+https://github.com/fearkov/3dsrecomp#cec1270db38411f9c02d3f356fc3ed6c3f007424"
+source = "git+https://github.com/fearkov/3dsrecomp#73b8f9caf3700991c290dd84bccffb92294d6b15"
 dependencies = [
  "libloading",
 ]
@@ -3095,7 +3095,7 @@ dependencies = [
 [[package]]
 name = "recomp3ds"
 version = "0.1.0"
-source = "git+https://github.com/fearkov/3dsrecomp#cec1270db38411f9c02d3f356fc3ed6c3f007424"
+source = "git+https://github.com/fearkov/3dsrecomp#73b8f9caf3700991c290dd84bccffb92294d6b15"
 dependencies = [
  "libc",
  "recomp-abi",
@@ -4651,8 +4651,8 @@ checksum = "e450f9b2ed1dff33c94c12589a87338689467b9c4f5d8a5710bd09a847d2c8a7"
 
 [[package]]
 name = "zakuro"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "ab_glyph",
  "cpal",
@@ -4680,8 +4680,8 @@ dependencies = [
 
 [[package]]
 name = "zakuro-common"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "bitflags 2.13.2",
  "log",
@@ -4690,8 +4690,8 @@ dependencies = [
 
 [[package]]
 name = "zakuro-core"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "ab_glyph",
  "bitflags 2.13.2",
@@ -4714,8 +4714,8 @@ dependencies = [
 
 [[package]]
 name = "zakuro-cpu"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "log",
  "serde",
@@ -4724,8 +4724,8 @@ dependencies = [
 
 [[package]]
 name = "zakuro-fs"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "crc32fast",
  "log",
@@ -4736,8 +4736,8 @@ dependencies = [
 
 [[package]]
 name = "zakuro-gpu"
-version = "0.2.30"
-source = "git+https://github.com/fearkov/zakuro?rev=80d78be3852b308d46da6d54817b30451771d9fe#80d78be3852b308d46da6d54817b30451771d9fe"
+version = "0.2.31"
+source = "git+https://github.com/fearkov/zakuro?rev=781b4a816e1001977bb76221feab13c43185cbab#781b4a816e1001977bb76221feab13c43185cbab"
 dependencies = [
  "ash",
  "ash-window",

@@ -7,9 +7,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
-# the versions the G1/G2 sessions were played and replayed on
-zakuro = { git = "https://github.com/fearkov/zakuro", rev = "80d78be3852b308d46da6d54817b30451771d9fe" }
-zakuro-core = { git = "https://github.com/fearkov/zakuro", rev = "80d78be3852b308d46da6d54817b30451771d9fe" }
+# the versions G1 and G2 were last replayed on, saves matching the recorded play
+zakuro = { git = "https://github.com/fearkov/zakuro", rev = "781b4a816e1001977bb76221feab13c43185cbab" }
+zakuro-core = { git = "https://github.com/fearkov/zakuro", rev = "781b4a816e1001977bb76221feab13c43185cbab" }
 env_logger = "0.11"
 log = "0.4"
 

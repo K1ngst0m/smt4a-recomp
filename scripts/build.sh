@@ -8,9 +8,9 @@
 # nothing it makes is meant to be shared: code/ and the program hold the game's code
 set -eu
 RECOMP_URL=https://github.com/fearkov/3dsrecomp
-# the 3dsrecomp the code was generated and tested with (interface version 4,
+# the 3dsrecomp the code was generated and tested with (interface version 5,
 # the one the pinned Zakuro's recomp-abi reads)
-RECOMP_REV=9db0d8b
+RECOMP_REV=73b8f9c
 TITLE=000400000019A200
 rom=$(realpath "$1") force=${2:-}
 root=$(cd "$(dirname "$0")/.." && pwd)
