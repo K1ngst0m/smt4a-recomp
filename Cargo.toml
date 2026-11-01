@@ -1,0 +1,17 @@
+# Shin Megami Tensei IV: Apocalypse (USA), recompiled by 3dsrecomp port
+
+[package]
+name = "smt4a"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+# the versions the G1/G2 sessions were played and replayed on
+zakuro = { git = "https://github.com/fearkov/zakuro", rev = "80d78be3852b308d46da6d54817b30451771d9fe" }
+zakuro-core = { git = "https://github.com/fearkov/zakuro", rev = "80d78be3852b308d46da6d54817b30451771d9fe" }
+env_logger = "0.11"
+log = "0.4"
+
+# a project of its own, whatever directory it sits in
+[workspace]
