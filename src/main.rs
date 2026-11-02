@@ -6,6 +6,7 @@
 //!     smt4a replay <rom> <frames>     plays a recording back headless, see replay.rs
 
 mod replay;
+mod widescreen;
 
 use std::ffi::c_void;
 use std::ptr::addr_of;
@@ -45,5 +46,5 @@ fn main() {
         replay::main(&args[1..], linked());
         return;
     }
-    zakuro::run(Some(linked()));
+    zakuro::run_with(Some(linked()), Some(Box::new(widescreen::Follow::new())));
 }

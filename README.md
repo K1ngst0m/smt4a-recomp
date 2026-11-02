@@ -24,6 +24,26 @@ It builds 3dsrecomp at the pinned version, recompiles the game into `code/`
 
 which takes Zakuro's options (`--help`).
 
+## Widescreen
+
+The game draws a 400x240 picture, whatever shape Zakuro's "Top screen
+shape" setting (in its in-game menu) stretches the top screen to.
+`overrides/widescreen.c` widens the projections the game builds itself by
+the same factor: the 3D gains view at the sides instead of being stretched
+(Hor+), and the 2D (menus, HUD, text) is drawn at its own shape in the
+middle. Full screen quads (fades, filters, the screen under a menu, the
+dialogue backdrop) are spread so they still cover the picture, their
+texture coordinates compressed to match. The aspect follows the setting
+while the game runs, so that one menu entry does both.
+
+`SMT4A_WIDE=16:9` (or `21:9`) turns it on for a replay, and
+`SMT4A_DUMP_AT=frame,...` writes the top screen as `top-<frame>.ppm` into
+`SMT4A_DUMP_DIR` (the current directory by default), with the perspective
+and quad calls of each dumped frame printed. With the setting at console
+the overrides must change nothing: `scripts/replay.sh` has to print
+`MATCH`, and the `widescreen` line of its `replay.log` must count 0 for
+every hook.
+
 ## Hints
 
 `hints/000400000019A200.hints` lists the addresses Zakuro had to interpret
@@ -46,9 +66,6 @@ ones the recorded run wrote, byte for byte. A session dir holds Zakuro's
 
 | | |
 |---|---|
-| Zakuro | `80d78be` (Cargo.toml) |
-| 3dsrecomp, code generation | `9db0d8b` (scripts/build.sh) |
-| 3dsrecomp's `recomp-abi`, what Zakuro reads the code with | `cec1270` (Cargo.lock), interface version 4 |
-
-3dsrecomp's main is at interface version 5 now; the pinned Zakuro doesn't
-build against it, so the lock keeps `recomp-abi` at `cec1270`.
+| Zakuro | `781b4a8` (Cargo.toml) |
+| 3dsrecomp, code generation | `73b8f9c` (scripts/build.sh) |
+| 3dsrecomp's `recomp-abi`, what Zakuro reads the code with | `73b8f9c` (Cargo.lock), interface version 5 |

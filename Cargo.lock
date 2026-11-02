@@ -3539,6 +3539,7 @@ dependencies = [
  "env_logger",
  "log",
  "zakuro",
+ "zakuro-common",
  "zakuro-core",
 ]
 

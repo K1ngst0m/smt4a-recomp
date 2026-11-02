@@ -2,8 +2,9 @@
 # builds smt4a from your own copy of Shin Megami Tensei IV: Apocalypse (USA)
 # usage: scripts/build.sh <decrypted .3ds/.cci> [--force]
 #   1. builds 3dsrecomp at the version pinned below, in .build/
-#   2. recompiles the game's code into code/ with the hints in hints/ (a few
-#      minutes, about 2.5 GB of memory), skipped when code/ is up to date
+#   2. recompiles the game's code into code/ with the hints in hints/ and the
+#      functions written by hand in overrides/ (a few minutes, about 2.5 GB
+#      of memory), skipped when code/ is up to date
 #   3. cargo build --release, target/release/smt4a
 # nothing it makes is meant to be shared: code/ and the program hold the game's code
 set -eu
@@ -31,7 +32,7 @@ git -C "$work/3dsrecomp" checkout --quiet "$RECOMP_REV"
 recomp=$work/3dsrecomp/target/release/3dsrecomp
 
 echo "== recompiling the game's code"
-stamp=$( { echo "$RECOMP_REV"; stat -c %s "$rom"; cat "$root"/hints/*.hints; } | sha256sum | cut -d' ' -f1)
+stamp=$( { echo "$RECOMP_REV"; stat -c %s "$rom"; cat "$root"/hints/*.hints "$root"/overrides/*.c; } | sha256sum | cut -d' ' -f1)
 if [ "$force" != --force ] && [ -f "$root/code/librecomp.a" ] && [ "$(cat "$root/code/.stamp" 2>/dev/null)" = "$stamp" ]; then
     echo "code/ is up to date, skipping (--force redoes it)"
 else
@@ -40,7 +41,7 @@ else
     rm -rf "$work/xdg" "$work/port"
     mkdir -p "$work/xdg/3dsrecomp"
     cp "$root/hints/$TITLE.hints" "$work/xdg/3dsrecomp/"
-    XDG_DATA_HOME=$work/xdg "$recomp" port "$rom" "$work/port" --name smt4a
+    XDG_DATA_HOME=$work/xdg "$recomp" port "$rom" "$work/port" --name smt4a --overrides "$root/overrides"
     rm -rf "$root/code"
     mv "$work/port/code" "$root/code"
     rm -rf "$work/port"
