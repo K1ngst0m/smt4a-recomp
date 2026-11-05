@@ -1,5 +1,7 @@
 # smt4a-recomp
 
+![SMT4A on PC](media/cover.webp)
+
 Shin Megami Tensei IV: Apocalypse (USA, title 000400000019A200) as a native
 PC program: the game's ARM code recompiled ahead of time into C by
 [3dsrecomp](https://github.com/fearkov/3dsrecomp) `port`, linked into one
